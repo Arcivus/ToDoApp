@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack -p",
+    "postinstall": "./node_modules/.bin/webpack",
     "prod": "node server.js",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
