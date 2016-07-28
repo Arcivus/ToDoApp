@@ -22,16 +22,16 @@ class App extends Component {
 
 	render() {
 		return(
-			<div>
+			<div className="app">
 				<h1>ToDo App</h1>
 				<InputField />
 				<TodoList selectedFilter={this.state.selectedFilter}/>
-				<div>
-					<p>Show:</p>
+				<div className="filter-bar">
+					<strong>Show:</strong>
 					<FilterLink filter="SHOW_ALL" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>All</FilterLink>
 					<FilterLink filter="SHOW_ACTIVE" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>Active</FilterLink>
 					<FilterLink filter="SHOW_COMPLETED" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>Completed</FilterLink>
-				<div>
+				</div>
 			</div>
 		);
 	}

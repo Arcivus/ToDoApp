@@ -21,7 +21,6 @@ class InputField extends Component {
 						value={this.state.todo}
 						onChange={event => this.setState({todo: event.target.value})}	
 					/>
-					<button>Submit</button>
 				</form>
 		);
 	}

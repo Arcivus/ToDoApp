@@ -30,7 +30,7 @@ class TodoItem extends Component {
 			>
 				{this.state.text}
 	
-				<button className="deleteButton" onClick={this.handleDelete}>Delete</button>
+				<button className="delete-button" onClick={this.handleDelete}>x</button>
 			</li>
 		);
 	}

@@ -17,7 +17,11 @@ class TodoList extends Component {
 	getVisibleTodos(todos, filter) {
 		switch(filter){
 			case "SHOW_ALL":
-				return todos;
+				const activeTodos = todos.filter(todo => !todo.completed);
+				const completedTodos = todos.filter(todo => todo.completed);
+				const sortedTodos = [...activeTodos, ...completedTodos];
+
+				return sortedTodos;
 			case "SHOW_ACTIVE":
 				return todos.filter(todo => !todo.completed);
 			case "SHOW_COMPLETED":
@@ -28,7 +32,7 @@ class TodoList extends Component {
 	render() {
 		let visibleTodos = this.getVisibleTodos(this.props.todos, this.props.selectedFilter);
 		return(
-			<ul>
+			<ul className="todo-list">
 				{visibleTodos.map(this.renderTodo)}
 			</ul>
 		);
