@@ -20,6 +20,16 @@ class App extends Component {
 		this.setState({selectedFilter});
 	}
 
+	getFilterProperties(filterValue) {
+		const props = {
+			filter: filterValue,
+			onFilterSelect: this.setFilter, 
+			currentFilter: this.state.selectedFilter
+		};
+
+		return props;
+	}
+
 	render() {
 		return(
 			<div className="app">
@@ -28,9 +38,9 @@ class App extends Component {
 				<TodoList selectedFilter={this.state.selectedFilter}/>
 				<div className="filter-bar">
 					<strong>Show:</strong>
-					<FilterLink filter="SHOW_ALL" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>All</FilterLink>
-					<FilterLink filter="SHOW_ACTIVE" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>Active</FilterLink>
-					<FilterLink filter="SHOW_COMPLETED" onFilterSelect={this.setFilter} currentFilter={this.state.selectedFilter}>Completed</FilterLink>
+					<FilterLink {...this.getFilterProperties("SHOW_ALL")}>All</FilterLink>
+					<FilterLink {...this.getFilterProperties("SHOW_ACTIVE")}>Active</FilterLink>
+					<FilterLink {...this.getFilterProperties("SHOW_COMPLETED")}>Completed</FilterLink>
 				</div>
 			</div>
 		);

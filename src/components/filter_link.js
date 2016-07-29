@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-export default (props) => {
-		if(props.filter === props.currentFilter){
-			return <span className="filter-link">{props.children}</span>
+export default ({filter, currentFilter, children, onFilterSelect}) => {
+		if(filter === currentFilter){
+			return <span className="filter-link">{children}</span>
 		}
 		return(
 			<a href="#" className="filter-link"  onClick={(e) => {
 				e.preventDefault();
-				props.onFilterSelect(props.filter);
+				onFilterSelect(filter);
 			}
-			}>{props.children}</a>
+			}>{children}</a>
 		);
 }
