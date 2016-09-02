@@ -6,22 +6,18 @@ import TodoItem from './todo_item';
 class TodoList extends Component {
 	renderTodo(todoData) {
 
-		return <TodoItem 
+		return <TodoItem
 			key={todoData.id}
 			text={todoData.text}
 			completed={todoData.completed}
 			id={todoData.id}
-		/>	
+		/>
 	}
 
 	getVisibleTodos(todos, filter) {
 		switch(filter){
 			case "SHOW_ALL":
-				const activeTodos = todos.filter(todo => !todo.completed);
-				const completedTodos = todos.filter(todo => todo.completed);
-				const sortedTodos = [...activeTodos, ...completedTodos];
-
-				return sortedTodos;
+				return todos;
 			case "SHOW_ACTIVE":
 				return todos.filter(todo => !todo.completed);
 			case "SHOW_COMPLETED":

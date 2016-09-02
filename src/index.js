@@ -23,7 +23,7 @@ class App extends Component {
 	getFilterProperties(filterValue) {
 		const props = {
 			filter: filterValue,
-			onFilterSelect: this.setFilter, 
+			onFilterSelect: this.setFilter,
 			currentFilter: this.state.selectedFilter
 		};
 
@@ -33,7 +33,6 @@ class App extends Component {
 	render() {
 		return(
 			<div className="app">
-				<h1>ToDo App</h1>
 				<InputField />
 				<TodoList selectedFilter={this.state.selectedFilter}/>
 				<div className="filter-bar">
