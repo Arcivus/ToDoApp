@@ -58,7 +58,7 @@ button{
 	padding: 1rem;
 	font-size: 1.125rem;
 	background-color: #FFE4B5;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Indie Flower', 'Bad Script', cursive;
 	border-bottom: solid #b3b3b3 0.025rem;
 }
 
@@ -79,7 +79,7 @@ button{
 	font-size: 1.125rem;
 	border: none;
 	outline: none;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Indie Flower', 'Bad Script', cursive;
 
 }
 .filter-bar{
